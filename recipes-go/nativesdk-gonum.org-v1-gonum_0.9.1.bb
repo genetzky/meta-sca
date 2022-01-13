@@ -1,0 +1,16 @@
+SUMMARY = "go.mod: gonum.org/v1/gonum"
+HOMEPAGE = "https://pkg.go.dev/gonum.org/v1/gonum"
+
+# License is determined by the modules included and will be therefore computed
+DEFAULT_PREFERENCE = "${SCA_DEFAULT_PREFERENCE}"
+LICENSE = "${@' & '.join(sorted(set(x for x in (d.getVar('GOSRC_LICENSE') or '').split(' ') if x)))}"
+
+# inject the needed sources
+require gonum.org-v1-gonum-sources.inc
+EXTRA_DEPENDS += "\
+    nativesdk-golang.org-x-exp \
+    nativesdk-golang.org-x-tools \
+"
+GO_IMPORT = "gonum.org/v1/gonum"
+inherit gosrc
+inherit nativesdk
