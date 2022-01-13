@@ -1,0 +1,7 @@
+#!/bin/sh
+IFS=:
+for dir in $PATH; do
+    for mod in $(find ${dir} -type f -name "sca.*"); do
+        ${mod}
+    done
+done
