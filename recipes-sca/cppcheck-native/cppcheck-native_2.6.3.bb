@@ -16,9 +16,12 @@ inherit pkgconfig
 inherit sca-description
 inherit native
 
+LIBPCRE = "libpcre-native"
+LIBZ3 = "z3-native"
+
 PACKAGECONFIG ??= "rules z3"
-PACKAGECONFIG[rules] = "HAVE_RULES=yes,,libpcre-native"
-PACKAGECONFIG[z3] = "USE_Z3=yes,,z3-native"
+PACKAGECONFIG[rules] = "HAVE_RULES=yes,,${LIBPCRE}"
+PACKAGECONFIG[z3] = "USE_Z3=yes,,${LIBZ3}"
 
 SCA_TOOL_DESCRIPTION = "cppcheck"
 
