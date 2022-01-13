@@ -7,6 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=0ea7a8535b886b84749903b72bb23949"
 
 DEPENDS += "\
             python3-flake8-native \
+            python3-pytest-runner-native \
             python3-toml-native \
             "
 

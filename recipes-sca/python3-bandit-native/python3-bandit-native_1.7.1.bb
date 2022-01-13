@@ -8,6 +8,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=1dece7821bf3fd70fe1309eaa37d52a2"
 DEPENDS += "\
             python3-gitpython-native \
             python3-native \
+            python3-pbr-native \
             python3-pyyaml-native \
             python3-six-native \
             python3-stevedore-native \

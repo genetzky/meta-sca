@@ -15,3 +15,6 @@ S = "${WORKDIR}/git"
 
 inherit setuptools3
 inherit native
+
+# put any LICENSE file into doc pkg
+FILES:${PN}-doc += "${datadir}/LICENSE"

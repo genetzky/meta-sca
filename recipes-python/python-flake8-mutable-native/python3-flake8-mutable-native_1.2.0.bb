@@ -10,6 +10,7 @@ DEPENDS += "\
             python3-mccabe-native \
             python3-pep8-native \
             python3-pyflakes-native \
+            python3-pytest-runner-native \
             "
 
 PYPI_PACKAGE = "flake8-mutable"

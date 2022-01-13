@@ -5,7 +5,10 @@ DEFAULT_PREFERENCE = "${SCA_DEFAULT_PREFERENCE}"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=1c8206d16fd5cc02fa9b0bb98955e5c2"
 
-DEPENDS += "python3-importlib-metadata-native"
+DEPENDS += "\
+    python3-importlib-metadata-native \
+    python3-setuptools-scm-native \
+"
 
 PYPI_PACKAGE = "pluggy"
 

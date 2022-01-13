@@ -15,6 +15,7 @@ DEPENDS += "\
             python3-pathlib2-native \
             python3-pluggy-native \
             python3-py-native \
+            python3-setuptools-scm-native \
             python3-wcwidth-native \
            "
 
