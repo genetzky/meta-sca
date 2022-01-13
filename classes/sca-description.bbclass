@@ -1,6 +1,8 @@
 ## SPDX-License-Identifier: BSD-2-Clause
 ## Copyright (c) 2020, Konrad Weihmann
 
+inherit sca-sdk-script-gen
+
 SCA_TOOL_DESCRIPTION ?= ""
 
 SRC_URI:append:class-native = " file://${SCA_TOOL_DESCRIPTION}.sca.description"
