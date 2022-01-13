@@ -47,4 +47,9 @@ npmhelper_do_install() {
     npm install --prefix ${D}${prefix} -g ${NPM_EXTRA_ARGS} --arch=${NPM_ARCH} --target_arch=${NPM_ARCH} --production ${B}/${NPM_PKGNAME_CLEAN}-${PV}.tgz
 }
 
+FILES:${PN} += " \
+    ${bindir} \
+    ${nonarch_libdir} \
+"
+
 EXPORT_FUNCTIONS do_install
