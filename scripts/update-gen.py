@@ -199,6 +199,11 @@ for item in data:
                                         item["title"], item["number"])
 if _updated_items > 0:
     try:
+        _pargs = [os.path.join(_args.repo, "scripts", "sdk-gen")]
+        subprocess.check_call(_pargs, universal_newlines=True)
+    except:
+        pass
+    try:
         _pargs = [os.path.join(_args.repo, "..", "meta-buildutils", "scripts", "unused"),
                 "--remove", _args.repo]
         subprocess.check_call(_pargs, universal_newlines=True)
