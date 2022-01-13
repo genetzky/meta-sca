@@ -2,6 +2,8 @@ PACKAGECONFIG:class-native = "mbstring openssl zip"
 PACKAGECONFIG[zip] = "--with-zip --with-zlib-dir=${STAGING_EXECPREFIXDIR},,libzip"
 PACKAGECONFIG[mbstring] = "--enable-mbstring,,"
 
+PACKAGECONFIG:class-nativesdk = "mbstring openssl zip"
+
 FILES:${PN}:class-native += "${sysconfdir}"
 
 do_install:append:class-native() {
@@ -12,3 +14,5 @@ do_install:append:class-native() {
             sed -e "s#${WORKDIR}#%SYSROOT%#g" \
             > ${D}${sysconfdir}/php/php.ini
 }
+
+BBCLASSEXTEND += "nativesdk"
