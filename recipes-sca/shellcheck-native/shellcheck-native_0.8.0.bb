@@ -2,7 +2,7 @@ SUMMARY = "Static code analyzer for shell-scripts"
 HOMEPAGE = "https://www.shellcheck.net/"
 BUGTRACKER = "https://github.com/koalaman/shellcheck/issues"
 
-COMPATIBLE_HOST = "^x86_64-linux|^aarch64-linux|^arm-linux"
+COMPATIBLE_HOST = "^x86_64-linux|^aarch64-linux|^arm-linux|.*x86-64|.*aarch64|.*arm"
 
 DEFAULT_PREFERENCE = "${SCA_DEFAULT_PREFERENCE}"
 LICENSE = "GPLv3"
