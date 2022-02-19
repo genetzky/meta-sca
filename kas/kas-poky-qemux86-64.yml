@@ -1,0 +1,43 @@
+header:
+  version: 8
+
+machine: qemux86-64
+distro: poky
+target: core-image-base
+
+repos:
+  poky:
+  meta-openembedded:
+    # refspec: dunfell
+    refspec: yocto-3.1.14
+  poky:
+    url: git://git.yoctoproject.org/poky
+    refspec: yocto-3.1.14
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+
+local_conf_header:
+  scatest-qemux86-64: |
+
+    CONF_VERSION = "1"
+
+    MACHINE = "qemux86-64"
+
+    BB_DISKMON_DIRS = ""
+    BB_GENERATE_SHALLOW_TARBALLS = "1"
+    BB_GIT_SHALLOW = "1"
+    EXTRA_IMAGE_FEATURES = "debug-tweaks"
+    PACKAGE_CLASSES = "package_rpm"
+    PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
+    PATCHRESOLVE = "noop"
+    SCA_VERBOSE_OUTPUT = "1"
+    USER_CLASSES = "image-prelink"
+
+    INHERIT += "rm_work"
+
+    # Add some preferred versions but for native only
+    PREFERRED_VERSION_python3-setuptools-scm-native = "6.4.%"
+    PREFERRED_VERSION_python3-packaging-native = "21.3"
+    PREFERRED_VERSION_python3-pyparsing-native = "3.%"
