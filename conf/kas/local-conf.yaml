@@ -7,3 +7,6 @@ local_conf_header:
     #CONF_VERSION = "2"
     # for yocto versions <= dunfell use "1"
     CONF_VERSION = "1"
+
+  meta-sca-rm-work: |
+    INHERIT += "rm_work"
